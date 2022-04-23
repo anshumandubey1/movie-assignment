@@ -1,0 +1,7 @@
+scopeconfig:
+  - scope: node
+
+fileignoreconfig:
+  - filename: src/App.js
+    checksum: b6940731faa7e7eeca64367c429136c7c18dcac9f7ee70711dfc83710ae9382e
+version: ''
