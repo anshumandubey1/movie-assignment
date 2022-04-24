@@ -7,12 +7,13 @@ const Movie = ({ movie }) => {
   const isSelected = state.selectedMovie.title === movie.title;
   return (
     <div
-      onClick={() =>
+      onClick={() => {
         dispatch({
           type: 'setBanner',
           movie,
-        })
-      }
+        });
+        window.scroll(0, 0);
+      }}
       className={(isSelected ? 'selected ' : '') + 'Movie'}
     >
       <img src={movie.images.poster} alt="" />

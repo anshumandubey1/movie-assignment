@@ -1,10 +1,12 @@
 @use 'index'
   
 .Pagination
-  margin: 20px
+  // background: #000000aa
+  margin: 40px
   display: flex
   justify-content: center
   position: relative
+
 
 
   .pages
@@ -14,12 +16,17 @@
       margin: 5px
       background: #00000000
       border: 0
-      border-bottom: 2px solid index.$primary-color
+      border: 1px solid index.$primary-color
+      border-radius: 7px
 
+      &:hover
+        background: index.$primary-color
+        color: index.$secendary-color
 
       &:disabled
-        border-bottom: 0
+        border: 0
 
   .selectPerPage
     position: absolute
     right: 20px
+    top: 10px
