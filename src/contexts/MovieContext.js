@@ -41,12 +41,21 @@ export const reducer = (state, action) => {
         state.allMovies,
         action.searchFilter
       );
+      if (displayedMovies.length > 0) {
+        return {
+          ...state,
+          displayedMovies,
+          selectedMovie: displayedMovies[0],
+          page: 1,
+          searchFilter: action.searchFilter,
+          error: null,
+        };
+      }
       return {
         ...state,
-        displayedMovies,
-        selectedMovie: displayedMovies[0] || {},
-        page: 1,
-        searchFilter: action.searchFilter,
+        error: new Error(
+          `No movies found for search query: ${action.searchFilter}`
+        ),
       };
     case 'setOrder':
       const sortedMovies = sortMovies(state.displayedMovies, action.order);

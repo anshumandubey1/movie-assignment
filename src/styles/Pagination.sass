@@ -1,0 +1,25 @@
+@use 'index'
+  
+.Pagination
+  margin: 20px
+  display: flex
+  justify-content: center
+  position: relative
+
+
+  .pages
+    button
+      color: index.$primary-color
+      font-size: 1.2rem
+      margin: 5px
+      background: #00000000
+      border: 0
+      border-bottom: 2px solid index.$primary-color
+
+
+      &:disabled
+        border-bottom: 0
+
+  .selectPerPage
+    position: absolute
+    right: 20px

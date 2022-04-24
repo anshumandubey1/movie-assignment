@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import MovieContext from '../contexts/MovieContext';
 import Movie from './Movie';
 import Pagination from './Pagination';
+import '../styles/List.sass';
 
 const List = () => {
   const { state } = useContext(MovieContext);
@@ -11,14 +12,14 @@ const List = () => {
     page * moviesPerPage
   );
   return (
-    <>
-      <Pagination />
-      <div>
+    <div className="List">
+      <div className="movies">
         {showMovies.map((movie, i) => (
-          <Movie movie={movie} key={i} />
+          <Movie movie={movie} key={movie.title + '-' + i} />
         ))}
       </div>
-    </>
+      <Pagination />
+    </div>
   );
 };
 

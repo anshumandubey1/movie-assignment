@@ -2,6 +2,10 @@ scopeconfig:
   - scope: node
 
 fileignoreconfig:
+  - filename: src/components/Banner.jsx
+    checksum: 365c40dceb00a0649af6f6fc6152f23e713cf2179b65bc71e367c02c25b52f34
   - filename: src/App.js
-    checksum: b6940731faa7e7eeca64367c429136c7c18dcac9f7ee70711dfc83710ae9382e
+    checksum: 30dc703685d994530fbedb32cd643ac5372ad06d33630886b3b8154f553cafbf
+  - filename: src/components/List.jsx
+    checksum: 8cc4c83653dba0208eab75569a7bc20f435e1179bffed2302d254688e28fc896
 version: ''

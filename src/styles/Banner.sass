@@ -1,0 +1,64 @@
+@use 'index'
+  
+.Banner
+  width: 100%
+  height: 545px
+  display: flex
+  justify-content: space-between
+
+  .backdrop
+    position: absolute
+    top: 0
+    left: 0
+    width: 100vw
+    height: 545px
+    object: cover
+    z-index: -1
+    filter: brightness(50%) blur(7px)
+
+
+  .img
+    flex-grow: 1
+    margin: 20px
+    margin-right: 5vw
+    display: flex
+    justify-content: flex-end
+
+    img
+      box-shadow: 9px 5px 16px 0px rgba(0,0,0,0.75)
+      height: 450px
+      align-self: flex-end 
+
+
+
+
+  .text
+    flex-grow: 3
+    margin: 20px
+    margin-left: 5vw
+    position: relative
+    z-index: 8
+    width: 100%
+    margin-top: auto
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    max-width: 600px
+
+    h2
+      color: index.$secendary-color 
+      font-size: 3rem
+      margin: 0
+      width: 100%
+
+    h4
+      font-size: 1.6rem
+      margin: 0
+
+    p
+      font-size: 0.9rem
+      margin: 0
+      margin-top: 10px
+    
+    

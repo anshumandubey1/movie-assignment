@@ -1,0 +1,59 @@
+@use 'index'
+  
+.AddMovie
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 36
+  width: 100vw
+  height: 100vh
+  background: #000000aa
+  display: flex
+  justify-content: center
+  align-items: center
+
+  #addMovie
+    width: 50%
+    min-width: 400px
+    max-width: 600px
+    background: index.$background-color
+    color: index.$secendary-color
+    padding: 20px
+    border-radius: 10px
+
+    label
+      display: block
+      font-size: 1.2rem
+      margin-top: 10px
+    
+    input, textarea
+      display: block
+      color: index.$primary-color
+      font-size: 1.3rem
+      width: 100%
+      border: 0
+      background: #00000000
+      border-bottom: 2px solid index.$primary-color
+      outline: none
+
+
+    button
+      width: 46%
+      margin: 20px 2% 10px 2%
+      background: #00000000
+      color: index.$primary-color
+      border-bottom: 2px solid index.$primary-color
+      transition: all 0.5s ease
+
+      &.submit
+        border: 2px solid index.$primary-color
+        border-radius: 5px
+
+
+      &:hover
+        color: index.$secendary-color
+        background: index.$primary-color
+        transition: all 0.5s ease
+        border-radius: 5px
+
+

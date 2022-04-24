@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from 'react';
 import MovieContext from '../contexts/MovieContext';
+import '../styles/AddMovie.sass';
 
 const AddMovie = ({ exit }) => {
   const { dispatch } = useContext(MovieContext);
@@ -23,54 +24,56 @@ const AddMovie = ({ exit }) => {
         },
       },
     });
+    exit();
   };
 
   return (
-    <form onSubmit={submit}>
-      <label htmlFor="title">Title</label>
-      <input type="text" id="title" name="title" required ref={title} />
-      <label htmlFor="rating">Rating</label>
-      <input
-        type="number"
-        min="0"
-        max="10"
-        step="0.1"
-        id="rating"
-        name="rating"
-        required
-        ref={rating}
-      />
-      <label htmlFor="poster">Poster URL</label>
-      <input
-        type="url"
-        id="poster"
-        name="poster"
-        value={poster}
-        onChange={(e) => setPoster(e.target.value)}
-        required
-      />
-      <label htmlFor="backdrop">Backdrop URL</label>
-      <input
-        type="url"
-        id="backdrop"
-        name="backdrop"
-        value={backdrop}
-        onChange={(e) => setBackdrop(e.target.value)}
-        required
-      />
-      <label htmlFor="description">Description</label>
-      <textarea
-        name="description"
-        id="description"
-        cols="30"
-        rows="4"
-        ref={description}
-      ></textarea>
-      <button type="reset" onClick={() => exit()}>
-        Cancel
-      </button>
-      <button>Submit</button>
-    </form>
+    <div className="AddMovie">
+      <form id="addMovie" onSubmit={submit}>
+        <label htmlFor="title">Title</label>
+        <input type="text" id="title" name="title" required ref={title} />
+        <label htmlFor="rating">Rating</label>
+        <input
+          type="number"
+          min="0"
+          max="10"
+          step="0.1"
+          id="rating"
+          name="rating"
+          required
+          ref={rating}
+        />
+        <label htmlFor="poster">Poster URL</label>
+        <input
+          type="url"
+          id="poster"
+          name="poster"
+          value={poster}
+          onChange={(e) => setPoster(e.target.value)}
+          required
+        />
+        <label htmlFor="backdrop">Backdrop URL</label>
+        <input
+          type="url"
+          id="backdrop"
+          name="backdrop"
+          value={backdrop}
+          onChange={(e) => setBackdrop(e.target.value)}
+          required
+        />
+        <label htmlFor="description">Description</label>
+        <textarea
+          name="description"
+          id="description"
+          rows="1"
+          ref={description}
+        ></textarea>
+        <button type="reset" onClick={() => exit()}>
+          Cancel
+        </button>
+        <button className="submit">Submit</button>
+      </form>
+    </div>
   );
 };
 

@@ -1,10 +1,12 @@
-import './App.css';
+import './styles/App.sass';
 import Header from './components/Header';
 import { useEffect, useReducer } from 'react';
 import MovieContext, { reducer } from './contexts/MovieContext';
 import Banner from './components/Banner';
 import List from './components/List';
 import configVariables from './env.json';
+import Loading from './components/Loading';
+import ErrorBox from './components/ErrorBox';
 const { BASE_URL, IMAGE_URL, API_KEY } = configVariables;
 
 function App() {
@@ -13,9 +15,10 @@ function App() {
     displayedMovies: [],
     selectedMovie: {},
     page: 1,
-    moviesPerPage: 5,
+    moviesPerPage: 20,
     order: 'asc',
     searchFilter: '',
+    error: null,
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -31,7 +34,7 @@ function App() {
 
   const getMovieListFromAPI = async (page) => {
     const response = await fetch(
-      `${BASE_URL}/popular?page=${page}&api_key=${API_KEY}&language=en-US`
+      `${BASE_URL}/popular?page=${page}&api_key=${API_KEY}&language=en`
     );
     const data = await response.json();
     const list = data.results.map((x) => ({
@@ -51,22 +54,26 @@ function App() {
     });
   };
 
+  if (state.allMovies.length === 0) {
+    return <Loading />;
+  }
+
   return (
     <div className="App">
       <MovieContext.Provider value={{ state, dispatch }}>
-        <Header></Header>
+        <img
+          className="background"
+          src={state.selectedMovie.images.backdrop}
+          alt=""
+        />
+        <Header className="Header" />
         <main>
-          {state.allMovies.length > 0 ? (
-            <>
-              <Banner />
-              <List />
-            </>
-          ) : (
-            <div>Loading...</div>
-          )}
+          <Banner />
+          <List />
         </main>
         <footer></footer>
       </MovieContext.Provider>
+      {state.error !== null ? <ErrorBox error={state.error} /> : <></>}
     </div>
   );
 }

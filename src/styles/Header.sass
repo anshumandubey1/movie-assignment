@@ -1,0 +1,72 @@
+@use 'index'
+.Header
+  position: fixed,
+  z-index: 32
+  background: #000000cc
+  top: 0
+  left: 0
+  width: 100vw
+  height: 50px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  transition: background 1s ease
+
+  &.onBanner
+    background: #00000000
+    transition: all 1s ease
+
+  .logo
+    padding: 5px
+    padding-left: 20px 
+    font-size: 1.5rem
+    display: flex
+    justify-content: left 
+    align-items: center
+
+  .inputs
+    padding: 5px
+    width: 50%
+    max-width: 400px
+    display: flex
+    font-size: 1.5rem
+    justify-content: space-around
+    align-items: center
+
+
+    #search
+      background: #00000000
+      border: 0
+      border-radius: 0
+      border-bottom: 2px solid index.$secendary-color
+      color: index.$secendary-color
+      transition: all .5s ease
+
+      &:focus
+        outline: none
+        color: index.$primary-color
+        border-bottom: 2px solid index.$primary-color
+
+      &:hover
+        color: index.$primary-color
+        border-bottom: 2px solid index.$primary-color
+        transition: all .5s ease
+
+
+
+    button
+      background: #00000000
+      font-size: 1.5rem
+      color: index.$secendary-color
+      border-radius: 0
+      border: 0
+      transition: all .5s ease
+
+      &:hover
+        color: index.$primary-color
+        transition: all .5s ease
+    
+
+
+    
+      
