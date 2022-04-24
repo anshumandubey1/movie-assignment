@@ -34,20 +34,23 @@ function App() {
 
   const getMovieListFromAPI = async (page) => {
     const response = await fetch(
-      `${BASE_URL}/popular?page=${page}&api_key=${API_KEY}&language=en`
+      `${BASE_URL}/popular?page=${page}&api_key=${API_KEY}&language=en-US`
     );
     const data = await response.json();
-    const list = data.results.map((x) => ({
-      title: x.title,
-      images: {
-        poster: `${IMAGE_URL}/w300${x.poster_path}`,
-        backdrop: `${IMAGE_URL}/original${
-          x.backdrop_path != null ? x.backdrop_path : x.poster_path
-        }`,
-      },
-      description: x.overview,
-      rating: x.vote_average,
-    }));
+    const list = data.results
+      .map((x) => ({
+        title: x.title,
+        images: {
+          poster: `${IMAGE_URL}/w300${x.poster_path}`,
+          backdrop: `${IMAGE_URL}/original${
+            x.backdrop_path != null ? x.backdrop_path : x.poster_path
+          }`,
+        },
+        description: x.overview,
+        rating: x.vote_average,
+        original_language: x.original_language,
+      }))
+      .filter((x) => x.original_language === 'en');
     dispatch({
       type: page === 1 ? 'setMovies' : 'addMovies',
       movies: list,
