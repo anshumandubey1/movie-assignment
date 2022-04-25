@@ -5,6 +5,7 @@
   margin: 40px
   display: flex
   justify-content: center
+  align-items: center
   position: relative
 
 
@@ -30,3 +31,9 @@
     position: absolute
     right: 20px
     top: 10px
+
+  @media (max-width: 600px)
+    flex-direction: column
+
+    .selectPerPage
+      position: relative
