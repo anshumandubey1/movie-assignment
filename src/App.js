@@ -15,7 +15,7 @@ function App() {
     displayedMovies: [],
     selectedMovie: {},
     page: 1,
-    moviesPerPage: 20,
+    moviesPerPage: 5,
     order: 'asc',
     searchFilter: '',
     error: null,

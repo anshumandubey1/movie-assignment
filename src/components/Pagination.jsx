@@ -51,10 +51,18 @@ const Pagination = () => {
             })
           }
         >
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="40">40</option>
+          <option value="5" selected={moviesPerPage === 5}>
+            5
+          </option>
+          <option value="10" selected={moviesPerPage === 10}>
+            10
+          </option>
+          <option value="20" selected={moviesPerPage === 20}>
+            20
+          </option>
+          <option value="40" selected={moviesPerPage === 40}>
+            40
+          </option>
         </select>
       </div>
     </div>
