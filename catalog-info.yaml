@@ -1,4 +1,22 @@
 apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: the-movie-db
+  description: |
+    The Movie Database (TMDB) is a community built movie and TV database. 
+    Every piece of data has been added by our amazing community dating back to 2008. 
+    TMDB's strong international focus and breadth of data is largely unmatched and something we're incredibly proud of. 
+    Put simply, we live and breathe community and that's precisely what makes us different.
+  links:
+    - title: Website
+      url: https://www.themoviedb.org/
+    - title: Documentation
+      url: https://developer.themoviedb.org/docs
+spec:
+  type: database
+  owner: TiVo Platform Technologies
+---
+apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: movie-assignment
@@ -16,4 +34,4 @@ spec:
   lifecycle: production
   owner: anshumandubey1
   dependsOn:
-    - https://api.themoviedb.org
+    - resource:default/the-movie-db
