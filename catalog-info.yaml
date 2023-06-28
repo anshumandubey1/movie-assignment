@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: movie-assignment
+  title: Movie Assignment
+  description: |
+    A movie web app that allows users to search, sort, add and view movies.
+  links:
+    - title: Website
+      url: https://movie-assignment-a417e.web.app/
+  annotations:
+    github.com/project-slug: anshumandubey1/movie-assignment
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: website
+  lifecycle: production
+  owner: anshumandubey1
+  dependsOn:
+    - https://api.themoviedb.org
