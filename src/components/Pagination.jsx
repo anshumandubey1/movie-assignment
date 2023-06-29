@@ -3,6 +3,7 @@ import MovieContext from '../contexts/MovieContext';
 import '../styles/Pagination.sass';
 import { HiDotsHorizontal } from 'react-icons/hi';
 
+// @todo: Improve UX
 const Pagination = () => {
   const { state, dispatch } = useContext(MovieContext);
   const { page, displayedMovies, moviesPerPage } = state;

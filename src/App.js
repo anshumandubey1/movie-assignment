@@ -32,6 +32,7 @@ function App() {
     setMovies();
   }, []);
 
+  // TODO: Make a service for this method
   const getMovieListFromAPI = async (page) => {
     const response = await fetch(
       `${BASE_URL}/popular?page=${page}&api_key=${API_KEY}&language=en-US`
@@ -60,7 +61,7 @@ function App() {
   if (state.allMovies.length === 0) {
     return <Loading />;
   }
-
+  // FIXME better background
   return (
     <div className="App">
       <MovieContext.Provider value={{ state, dispatch }}>
