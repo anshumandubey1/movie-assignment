@@ -10,6 +10,8 @@ metadata:
   links:
     - title: Website
       url: https://www.themoviedb.org/
+    - title: Documentation
+      url: https://developer.themoviedb.org/docs
 spec:
   type: database
   owner: TiVo Platform Technologies
@@ -26,7 +28,7 @@ metadata:
       url: https://movie-assignment-a417e.web.app/
   annotations:
     github.com/project-slug: anshumandubey1/movie-assignment
-    backstage.io/techdocs-ref: url:https://developer.themoviedb.org/docs
+    # backstage.io/techdocs-ref: url:https://developer.themoviedb.org/docs
 spec:
   type: website
   lifecycle: production
